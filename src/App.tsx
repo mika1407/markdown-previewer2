@@ -60,12 +60,17 @@ function App() {
       <div>
         <h1 style={{ textAlign: 'center' }}>Markdown Previewer</h1>
         <div className="boxes-container">
+          <div className="editor-container">
+        <h2>Editor</h2>
           <textarea
             name="editor"
             id="editor"
             value={markdownText}
             onChange={(e) => setMarkdownText(e.target.value)}
           ></textarea>
+                </div>
+      <div className="preview-container">
+        <h2>Preview</h2>
           <div id="preview">
             <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
               {markdownText}
@@ -73,6 +78,7 @@ function App() {
           </div>
         </div>
       </div>
+       </div>
     </>
   );
 }
